@@ -9,13 +9,12 @@ class Usuarios {
     private $cpass;
     private $sexo;
     
-    function __construct($usuarioEnviado) {
+    function __construct(Array $usuarioEnviado) {
         $this->id = $usuarioEnviado['id'];
         $this->nombre = $usuarioEnviado['nombre'];
         $this->apellido = $usuarioEnviado['apellido'];
         $this->mail = $usuarioEnviado['mail'];
-        $this->pass = $usuarioEnviado['pass'];
-        $this->cpass = $usuarioEnviado['cpass'];
+        $this->pass = $this->setPass($usuarioEnviado['pass']);      
         $this->sexo = $usuarioEnviado['sexo'];       
     }
     
@@ -32,7 +31,7 @@ class Usuarios {
         $this->mail = $mail;
     }
     public function setPass($pass){
-        $this->pass = $pass;
+        $this->pass = password_hash($pass, PASSWORD_DEFAULT);
     }
     public function setCpass($cpass){
         $this->setCpAss = $cpass;
