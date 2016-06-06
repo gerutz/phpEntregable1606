@@ -8,8 +8,10 @@ class RepositorioUsuario {
         
     }
     
-    public function guardarUsuario(Usuario $nuevoUsuario){
+    public function guardarUsuario(Usuarios $nuevoUsuario){
         
     }
 }
+
+
 
