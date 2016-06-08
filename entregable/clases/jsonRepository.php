@@ -1,8 +1,14 @@
 <?php
-
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
+    require_once 'repositorio.php';
+    require_once 'userJsonRepository';
+    
+    class JSONRepository extends Repositorio {
+        private $userRepository;
+        
+        public function getUserRepository(){
+            if($this->userRepository === null){
+                $userRepository = new UserJsonRepository();                
+            }
+            return $this->userRepository;
+        }
+    }
