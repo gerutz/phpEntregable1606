@@ -1,6 +1,6 @@
 <?php
     require_once 'repositorio.php';
-    require_once 'userJsonRepository';
+    require_once 'userJsonRepository.php';
     
     class JSONRepository extends Repositorio {
         private $userRepository;

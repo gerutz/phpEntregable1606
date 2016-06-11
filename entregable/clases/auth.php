@@ -49,6 +49,8 @@ class Auth {
             return isset($_SESSION['usuarioLogueado']);
     }
     
-    public function getUsuarioLogueado(){}   
+    public function getUsuarioLogueado(){
+        return $_SESSION["usuarioLogueado"];
+    }   
 }
 
