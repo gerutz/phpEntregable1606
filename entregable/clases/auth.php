@@ -15,18 +15,39 @@ class Auth {
             Auth::$instance = new Auth();
             Auth::$instance->setRepositorioUsuario($repositorioUsuario);
             Auth::$instance->checkLogin();
-        }        
+        }  
+        
+        return Auth::$instance;
     }
-
-   
     
-    public function checkLogin(){}
+    public function setRepositorioUsuario(RepositorioUsuario $repositorioUsuario){
+        $this->repositorioUsuario = $repositorioUsuario;
+    }
     
-    public function login(){}
+    public function checkLogin(){            
+        
+        if(!isset($_SESSION['usuarioLogueado'])){
+            if(isset($_COOKIE['usuarioLogueado'])){
+                $idUsuario = $_COOKIE['usuarioLogueado'];
+                
+                $usuario = $this->repositorioUsuario->getUsuarioById($idUsuario);//crear funcion getUsuarioById
+                
+                $this->login($usuario);
+            }
+        }
+    }
+    
+    public function login($usuario){
+        unset($usuario['password']);
+        $_SESSION['usuarioLogueado'] = $usuario;
+        
+    }
     
     public function logout(){} 
     
-    public function estaLogueado(){}
+    public function estaLogueado(){
+            return isset($_SESSION['usuarioLogueado']);
+    }
     
     public function getUsuarioLogueado(){}   
 }
