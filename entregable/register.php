@@ -11,14 +11,24 @@ $pnombre = "";
 $papellido = "";
 $pmail = "";
 
+$sexos = ['masculino', 'femenino', 'otro'];
+
 if($_POST){
-
-
     
-    $errores = [];
+    $pnombre = $_POST['nombre'];
+    $papellido = $_POST['apellido'];
+    $pmail = $_POST['mail'];
+    
+    $errores = $validar->validarUsario($_POST);
     
     if(empty($errores)){
         
+        $nuevoUsuario = new Usuarios($_POST);
+        $repositorio->getUserRepository()->guardarUsuario($nuevoUsuario);
+        //implementar guardar imagen
+        
+        header("location:index.php");
+        exit;
     }
 }
 

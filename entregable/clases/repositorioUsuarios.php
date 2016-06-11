@@ -2,13 +2,13 @@
 require_once 'usuarios.php';
 
 
-class RepositorioUsuario {
+abstract class productsRepository {
     
-    public function existeMail($mail){
+    public function existsId($id){
         
     }
     
-    public function guardarUsuario(Usuarios $nuevoUsuario){
+    public function saveProducts(Products $newProduct){
         
     }
 }

@@ -3,7 +3,7 @@ require_once 'usuarios.php';
 require_once 'repositorioUsuarios.php';
 
 
-class UserJsonRepository extends RepositorioUsuario {
+class UserJsonRepository extends RepositorioUsuarios {
     
     public function existeMail($mail) {
         

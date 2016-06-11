@@ -4,6 +4,7 @@
     
     class JSONRepository extends Repositorio {
         private $userRepository;
+        private $productRepository;
         
         public function getUserRepository(){
             if($this->userRepository === null){
@@ -11,4 +12,16 @@
             }
             return $this->userRepository;
         }
+        
+        public function getProductRepository(){
+            if($this->productRepository === null){
+                $productRepository = new ProductJsonRepository();                
+            }
+            return $this->productRepository;
+        }
+        
+        
+        
+        
+        
     }
