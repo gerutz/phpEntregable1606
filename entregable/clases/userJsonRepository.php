@@ -84,7 +84,7 @@ class UserJsonRepository extends RepositorioUsuario {
         return null;
     }
     
-    public function getUuarioById($id){
+    public function getUsuarioById($id){
         $arrayUsuarios = $this->getAllUsers();
         
         foreach($arrayUsuarios as $key => $usuario){
