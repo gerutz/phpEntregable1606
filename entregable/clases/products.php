@@ -35,7 +35,7 @@ class Products {
         $this->stock = $stock; 
     }
     public function setIdOwner($id_owner){
-        $this->id_owner = $auth->getUsuarioLogueado();//  
+        $this->id_owner = $auth->getUsuarioLogueado();//  Consultar si esta ok esta implementacion.
     }
     
     
