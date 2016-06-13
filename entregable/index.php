@@ -9,15 +9,8 @@
         $nombre = $usuario->getNombre();
     }
 
-    $errores = $validar->validarLogin();
-
-    // registrarse
-    // login
-    // logout
 ?>
 <html>
-    
-
     <head>
         <title> Home Entregable</title>
     </head>
